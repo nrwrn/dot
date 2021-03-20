@@ -1,5 +1,5 @@
 links:
-  init.vim: ~/.config/nvim/keymap.vim
+  init.vim: ~/.config/nvim/init.vim
   keymap.vim: ~/.config/nvim/keymap.vim
   plugins.vim: ~/.config/nvim/plugins.vim
   deoplete.vim: ~/.config/nvim/deoplete.vim

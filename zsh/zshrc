@@ -49,7 +49,7 @@ bindkey "^U" backward-kill-line
 export KEYTIMEOUT=1
 
 # source other config files
-source $HOME/.config/alias.zsh
+source $HOME/.config/zsh/alias.zsh
 if [ -f ~/.config/zsh/host.zsh ]; then
     source $HOME/.config/zsh/host.zsh
 fi

@@ -1,3 +1,5 @@
 deps:
   - nvim
   - zsh
+  - tmux
+  - ranger

@@ -5,11 +5,12 @@ export PATH
 source <(antibody init)
 antibody bundle < ~/.config/zsh/plugins.txt
 
-autoload -U compinit
+autoload -Uz compinit
 compinit
+COMPLETION_WAITING_DOTS="true"
+setopt COMPLETE_ALIASES
 
 # Prompt
-COMPLETION_WAITING_DOTS="true"
 SPACESHIP_VI_MODE_COLOR="green"
 SPACESHIP_VI_MODE_NORMAL="[CMD]"
 SPACESHIP_VI_MODE_INSERT="INPUT"
@@ -22,13 +23,10 @@ setopt interactivecomments
 HISTFILE=~/.zsh_history
 SAVEHIST=10000
 HISTSIZE=10000
-HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE="true"
+setopt SHARE_HISTORY
 setopt HIST_FIND_NO_DUPS
-bindkey '^[[A'  history-substring-search-up
-bindkey '^[[B'  history-substring-search-down
-bindkey -M vicmd 'k' history-substring-search-up
-bindkey -M vicmd 'j' history-substring-search-down
-
+setopt EXTENDED_HISTORY
+export HISTTIMEFORMAT="[%F %T] "
 
 # Completion
 zstyle ':completion:*' use-cache on
@@ -38,15 +36,29 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 export EDITOR='/usr/bin/nvim'
 export VISUAL='/usr/bin/nvim'
 export CHEAT_EDITOR='/usr/bin/nvim'
+export BAT_THEME='ansi'
+if type batcat > /dev/null; then
+    export LESSOPEN="| batcat --color=always -p %s"
+    export LESS=" -R "
+elif type bat > /dev/null; then
+    export LESSOPEN="| bat --color=always -p %s"
+    export LESS=" -R "
+fi
 
 # Vi-mode
 spaceship_vi_mode_enable
 bindkey -v # just to be thorough
+export KEYTIMEOUT=1
+
+# Key binds
+bindkey "^[[A" history-substring-search-up
+bindkey "^[[B" history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
 bindkey "^?" backward-delete-char
 bindkey "^W" backward-kill-word
 bindkey "^H" backward-delete-char
 bindkey "^U" backward-kill-line
-export KEYTIMEOUT=1
 
 # source other config files
 source $HOME/.config/zsh/alias.zsh

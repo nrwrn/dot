@@ -2,11 +2,16 @@ alias sz="source ~/.zshrc"
 if type exa > /dev/null; then
     alias ls="exa"
     alias la="exa -a"
-    alias ll="exa -la"
+    alias ll="exa -la --icons"
 else
     alias ls="ls --color"
     alias la="ls -a --color"
     alias ll="ls -la --color"
+fi
+if type batcat > /dev/null; then
+    alias cat="batcat -p --paging=never"
+elif type bat > /dev/null; then
+    alias cat="bat -p --paging=never"
 fi
 alias vim="nvim -p"
 alias nvim="nvim -p"

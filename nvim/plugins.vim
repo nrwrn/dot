@@ -20,12 +20,14 @@ Plug 'sebastianmarkow/deoplete-rust'
 Plug 'ervandew/supertab'
 
 " Language support/formatting
-Plug 'mhartington/nvim-typescript'
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 Plug 'rust-lang/rust.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-markdown'
 Plug 'sirtaj/vim-openscad'
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
+Plug 'HerringtonDarkholme/yats.vim'
 
 " File browsing
 Plug 'ctrlpvim/ctrlp.vim'
@@ -42,3 +44,7 @@ call plug#end()
 
 " Set options
 let g:airline_theme='base16'
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+    \}

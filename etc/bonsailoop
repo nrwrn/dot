@@ -1,0 +1,6 @@
+#!/bin/bash
+while :
+do
+	bonsai -l -t 10 -T
+	sleep 3600
+done

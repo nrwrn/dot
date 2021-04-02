@@ -1,0 +1,6 @@
+deps:
+  - color
+links:
+  bonsai: ~/bin/bonsai
+  bonsailoop: ~/bin/bonsailoop
+  pipes2: ~/bin/pipes2

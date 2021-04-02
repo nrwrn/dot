@@ -5,6 +5,7 @@ export PATH
 source <(antibody init)
 antibody bundle < ~/.config/zsh/plugins.txt
 
+zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 autoload -Uz compinit
 compinit
 COMPLETION_WAITING_DOTS="true"

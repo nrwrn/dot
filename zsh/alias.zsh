@@ -2,7 +2,7 @@ alias sz="source ~/.zshrc"
 if type exa > /dev/null; then
     alias ls="exa"
     alias la="exa -a"
-    alias ll="exa -la --icons"
+    alias ll="exa -la --icons --git"
 else
     alias ls="ls --color"
     alias la="ls -a --color"

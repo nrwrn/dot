@@ -1,0 +1,29 @@
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east} --follow
+
+super + d
+	rofi -show drun
+
+super + shift + d
+	rofi -show run
+
+super + s
+	rofi -show ssh
+
+super + Return
+	alacritty
+
+super + shift + {e,r}
+	bspc {quit,wm -r}
+
+super + shift + s
+	systemctl suspend
+
+super + q
+	bspc node -c
+
+super + ctrl + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+super + ctrl + shift + {h,j,k,l}
+	bspc node -z {left 20 0,bottom 0 -20,top 0 20,right -20 0}

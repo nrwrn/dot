@@ -1,0 +1,6 @@
+links:
+  bspwmrc: ~/.config/bspwm/bspwmrc
+  sxhkdrc: ~/.config/sxhkd/sxhkdrc
+  default.sxhkdrc: ~/.config/sxhkd/default.sxhkdrc
+  lyoko.sxhkdrc: ~/.config/sxhkd/lyoko.sxhkdrc
+  kiwi.sxhkdrc: ~/.config/sxhkd/kiwi.sxhkdrc

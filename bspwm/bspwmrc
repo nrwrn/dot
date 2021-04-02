@@ -2,7 +2,7 @@
 
 pkill polybar
 
-if [[ $(hostname) == 'lyoko' ]]; then
+if [[ $(uname -n) = 'lyoko' ]]; then
 	pgrep -x sxhkd > /dev/null || sxhkd ~/.config/sxhkd/lyoko.sxhkdrc &
 
 	bspc monitor DP-2 -d left steam code
@@ -12,7 +12,7 @@ if [[ $(hostname) == 'lyoko' ]]; then
 	polybar -r left &
 	polybar -r right &
 	polybar -r tv &
-elif [[ $(hostname) == 'kiwi' ]]; then
+elif [[ $(uname -n) = 'kiwi' ]]; then
 	pgrep -x sxhkd > /dev/null || sxhkd ~/.config/sxhkd/kiwi.sxhkdrc &
 	bspc monitor -d www code discord games book six seven music nine ten
 	polybar -r laptop &

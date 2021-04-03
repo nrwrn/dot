@@ -24,7 +24,6 @@ else
 	pgrep -x polybar > /dev/null || polybar -c ~/.config/polybar/kiwi.ini laptop &
 fi
 
-pkill -USR1 -x sxhkd
 pgrep -x dunst > /dev/null || dunst &
 nitrogen --restore
 polybar-msg cmd restart

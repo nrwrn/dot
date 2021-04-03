@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+# Script modified from these wonderful people:
+# https://github.com/dastorm/volume-notification-dunst/blob/master/volume.sh
+# https://gist.github.com/sebastiencs/5d7227f388d93374cebdf72e783fbd6a
+
+function get_brightness {
+	xbacklight
+}
+
+function send_notification {
+	brightness=$(xbacklight)
+	brightnessround=$(bc <<< "scale=0; $brightness/1")
+	# Make the bar with the special character ─ (it's not dash -)
+	# https://en.wikipedia.org/wiki/Box-drawing_character
+	barraw=$(seq --separator="█" 0 "$(bc <<< "$brightness / 5")")
+	bar=$(echo $barraw | sed 's/[0-9]//g')
+	echo $bar
+	# Send the notification
+	dunstify -i "notarealicon" -t 1500 -h int:value:"$brightness" -r 696969 -u normal "  BRIGHT // $brightnessround   $bar"
+}
+
+case $1 in
+  up)
+    xbacklight -inc 5
+    send_notification
+    ;;
+  down)
+    xbacklight -dec 5
+    send_notification
+    ;;
+esac

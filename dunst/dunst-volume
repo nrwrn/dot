@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+# Script modified from these wonderful people:
+# https://github.com/dastorm/volume-notification-dunst/blob/master/volume.sh
+# https://gist.github.com/sebastiencs/5d7227f388d93374cebdf72e783fbd6a
+
+function get_volume {
+	pamixer --get-volume
+}
+
+function is_mute {
+	pamixer --get-mute | grep "true" > /dev/null
+}
+
+function send_notification {
+  iconSound="audio-volume-high-symbolic"
+  iconMuted="audio-volume-muted-symbolic"
+  if is_mute ; then
+    dunstify -i $iconMuted -t 1500 -h int:value:0 -h string:synchronous:volume -r 6969 -u normal "  VOLUME // MUTE"
+  else
+    volume=$(get_volume)
+    # Make the bar with the special character ─ (it's not dash -)
+    # https://en.wikipedia.org/wiki/Box-drawing_character
+    bar=$(seq --separator="█" 0 "$((volume / 5))" | sed 's/[0-9]//g')
+    # Send the notification
+    dunstify -i $iconSound -t 1500 -h int:value:"$volume" -h string:synchronous:volume -r 6969 -u normal "  VOLUME // $volume   $bar"
+  fi
+}
+
+case $1 in
+  up)
+    # set the volume on (if it was muted)
+    pactl set-sink-mute @DEFAULT_SINK@ false
+    # up the volume (+ 5%)
+    pactl set-sink-volume @DEFAULT_SINK@ +1000
+    send_notification
+    ;;
+  down)
+    pactl set-sink-mute @DEFAULT_SINK@ false
+    pactl set-sink-volume @DEFAULT_SINK@ -1000
+    send_notification
+    ;;
+  mute)
+    # toggle mute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+    send_notification
+    ;;
+esac

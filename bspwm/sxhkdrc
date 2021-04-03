@@ -30,3 +30,19 @@ super + ctrl + {h,j,k,l}
 
 super + ctrl + shift + {h,j,k,l}
 	bspc node -z {left 20 0,bottom 0 -20,top 0 20,right -20 0}
+
+XF86AudioLowerVolume
+	~/bin/dunst-volume down
+
+XF86AudioRaiseVolume
+	~/bin/dunst-volume up
+
+XF86AudioMute
+	~/bin/dunst-volume mute
+
+XF86MonBrightnessDown
+	~/bin/dunst-brightness down
+
+XF86MonBrightnessUp
+	~/bin/dunst-brightness up
+

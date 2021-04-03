@@ -9,13 +9,13 @@ if [[ $(uname -n) = 'lyoko' ]]; then
 	bspc monitor DP-0 -d right discord docs
 	bspc monitor HDMI-0 -d tv
 
-	polybar -r left &
-	polybar -r right &
-	polybar -r tv &
+	polybar -c ~/.config/polybar/lyoko.ini left &
+	polybar -c ~/.config/polybar/lyoko.ini right &
+	polybar -c ~/.config/polybar/lyoko.ini tv &
 elif [[ $(uname -n) = 'kiwi' ]]; then
 	pgrep -x sxhkd > /dev/null || sxhkd ~/.config/sxhkd/kiwi.sxhkdrc &
 	bspc monitor -d www code discord games book six seven music nine ten
-	polybar -r laptop &
+	polybar -c ~/.config/polybar/kiwi.ini laptop &
 else
 	# sane defaults
 	pgrep -x sxhkd > /dev/null || sxhkd ~/.config/sxhkd/default.sxhkdrc &
@@ -24,7 +24,9 @@ else
 fi
 
 pkill -USR1 -x sxhkd
-pkill dunst; dunst
+pgrep -x dunst > /dev/null || dunst &
+pgrep -x light-locker > /dev/null || light-locker &
+nitrogen --restore
 
 bspc config border_width 3
 bspc config window_gap 20

@@ -1,7 +1,5 @@
 #!/bin/sh
 
-pkill polybar
-
 if [[ $(uname -n) = 'lyoko' ]]; then
 	pgrep -x sxhkd > /dev/null || sxhkd ~/.config/sxhkd/lyoko.sxhkdrc &
 
@@ -9,24 +7,27 @@ if [[ $(uname -n) = 'lyoko' ]]; then
 	bspc monitor DP-0 -d right discord docs
 	bspc monitor HDMI-0 -d tv
 
-	polybar -c ~/.config/polybar/lyoko.ini left &
-	polybar -c ~/.config/polybar/lyoko.ini right &
-	polybar -c ~/.config/polybar/lyoko.ini tv &
+	if ! pgrep -x polybar > /dev/null; then
+		polybar -c ~/.config/polybar/lyoko.ini left &
+		polybar -c ~/.config/polybar/lyoko.ini right &
+		polybar -c ~/.config/polybar/lyoko.ini tv &
+	fi
 elif [[ $(uname -n) = 'kiwi' ]]; then
 	pgrep -x sxhkd > /dev/null || sxhkd ~/.config/sxhkd/kiwi.sxhkdrc &
 	bspc monitor -d www code discord games book six seven music nine ten
-	polybar -c ~/.config/polybar/kiwi.ini laptop &
+	pgrep -x polybar > /dev/null || polybar -c ~/.config/polybar/kiwi.ini laptop &
+	pgrep -x light-locker > /dev/null || light-locker &
 else
 	# sane defaults
 	pgrep -x sxhkd > /dev/null || sxhkd ~/.config/sxhkd/default.sxhkdrc &
 	bspc monitor -d I II III IV V VI VII VIII IX X
-	polybar -r laptop &
+	pgrep -x polybar > /dev/null || polybar -c ~/.config/polybar/kiwi.ini laptop &
 fi
 
 pkill -USR1 -x sxhkd
 pgrep -x dunst > /dev/null || dunst &
-pgrep -x light-locker > /dev/null || light-locker &
 nitrogen --restore
+polybar-msg cmd restart
 
 bspc config border_width 3
 bspc config window_gap 20

@@ -1,6 +1,9 @@
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east} --follow
 
+super + f
+	bspc node -t '~fullscreen'
+
 super + d
 	rofi -show drun
 

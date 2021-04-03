@@ -1,3 +1,4 @@
 links:
   dunst-brightness: ~/bin/dunst-brightness
   dunst-volume: ~/bin/dunst-volume
+  dunstrc: ~/.config/dunst/dunstrc

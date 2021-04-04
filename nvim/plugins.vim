@@ -27,6 +27,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-markdown'
 Plug 'sirtaj/vim-openscad'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
+Plug 'baskerville/vim-sxhkdrc'
 Plug 'HerringtonDarkholme/yats.vim'
 
 " File browsing

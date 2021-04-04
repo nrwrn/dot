@@ -1,5 +1,7 @@
 #!/bin/sh
 
+xsetroot -cursor_name left_ptr
+
 if [[ $(uname -n) = 'lyoko' ]]; then
 	pgrep -x sxhkd > /dev/null || sxhkd ~/.config/sxhkd/lyoko.sxhkdrc &
 

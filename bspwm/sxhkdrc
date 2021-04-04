@@ -1,8 +1,14 @@
+super + c
+	pkill -USR1 -x sxhkd
+
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east} --follow
 
 super + f
 	bspc node -t '~fullscreen'
+
+super + m
+	bspc desktop -l next
 
 super + d
 	rofi -show drun
@@ -45,4 +51,9 @@ XF86MonBrightnessDown
 
 XF86MonBrightnessUp
 	~/bin/dunst-brightness up
+
+Print
+	mkdir -p ~/Pictures/scrot && \
+	scrot ~/Pictures/scrot/$(uname -n).png && \
+	notify-send "took scrot"
 

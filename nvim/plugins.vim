@@ -38,9 +38,6 @@ Plug 'francoiscabrol/ranger.vim'
 " Keybinds
 Plug 'tpope/vim-sensible'
 
-" Live Editing
-Plug 'turbio/bracey.vim'
-
 call plug#end()
 
 " Set options

@@ -1,0 +1,8 @@
+configuration {
+	modi: "drun,ssh,window,run";
+	show-icons: true;
+	icon-theme: "Qogir";
+	cycle: true;
+	theme: "theme";
+	terminal: "alacritty";
+}

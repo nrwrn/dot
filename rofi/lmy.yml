@@ -1,0 +1,3 @@
+links:
+  config.rasi: ~/.config/rofi/config.rasi
+  theme.rasi: ~/.config/rofi/theme.rasi

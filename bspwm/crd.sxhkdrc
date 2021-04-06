@@ -42,3 +42,9 @@ Print
 	scrot ~/Pictures/scrot/$(uname -n).png && \
 	notify-send "took scrot"
 
+alt + {_, shift + }{u,i,o,p,comma,period,y}
+	bspc {desktop -f,node -d} '{www,code,test,docs,five,six,eight}'
+
+alt + {_, shift + }{1,2,3,4,5,6,7,8,9,0}
+	bspc {desktop -f,node -d} '{www,code,test,docs,five,six,seven,eight,nine,ten}'
+

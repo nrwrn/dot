@@ -1,0 +1,44 @@
+alt + c
+	pkill -USR1 -x sxhkd
+
+alt + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east} --follow
+
+alt + f
+	bspc node -t '~fullscreen'
+
+alt + m
+	bspc desktop -l next
+
+alt + d
+	rofi -show drun
+
+alt + shift + d
+	rofi -show run
+
+alt + s
+	rofi -show ssh
+
+alt + Return
+	alacritty
+
+alt + shift + {e,r}
+	bspc {quit,wm -r}
+
+alt + shift + s
+	systemctl suspend
+
+alt + q
+	bspc node -c
+
+alt + ctrl + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+alt + ctrl + shift + {h,j,k,l}
+	bspc node -z {left 20 0,bottom 0 -20,top 0 20,right -20 0}
+
+Print
+	mkdir -p ~/Pictures/scrot && \
+	scrot ~/Pictures/scrot/$(uname -n).png && \
+	notify-send "took scrot"
+

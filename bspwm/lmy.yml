@@ -4,3 +4,4 @@ links:
   default.sxhkdrc: ~/.config/sxhkd/default.sxhkdrc
   lyoko.sxhkdrc: ~/.config/sxhkd/lyoko.sxhkdrc
   kiwi.sxhkdrc: ~/.config/sxhkd/kiwi.sxhkdrc
+  crd.sxhkdrc: ~/.config/sxhkd/crd.sxhkdrc

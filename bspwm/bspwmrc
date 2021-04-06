@@ -1,8 +1,6 @@
 #!/bin/sh
 
-xsetroot -cursor_name left_ptr
-
-if [[ $(uname -n) = 'lyoko' ]]; then
+configure_lyoko() {
 	pgrep -x sxhkd > /dev/null || sxhkd ~/.config/sxhkd/lyoko.sxhkdrc &
 
 	bspc monitor DP-2 -d left steam code
@@ -14,20 +12,43 @@ if [[ $(uname -n) = 'lyoko' ]]; then
 		polybar -c ~/.config/polybar/lyoko.ini right &
 		polybar -c ~/.config/polybar/lyoko.ini tv &
 	fi
-elif [[ $(uname -n) = 'kiwi' ]]; then
+}
+
+configure_kiwi() {
 	pgrep -x sxhkd > /dev/null || sxhkd ~/.config/sxhkd/kiwi.sxhkdrc &
 	bspc monitor -d www code discord games book six seven music nine ten
 	pgrep -x polybar > /dev/null || polybar -c ~/.config/polybar/kiwi.ini laptop &
 	pgrep -x light-locker > /dev/null || light-locker &
-else
+}
+
+configure_crd() {
+	pgrep -x sxhkd > /dev/null || sxhkd -c ~/.config/sxhkd/crd.sxhkdrc &
+	bspc monitor -d www code test docs five six seven eight nine ten
+	pgrep -x polybar > /dev/null || polybar -c ~/.config/polybar/kiwi.ini laptop &
+}
+
+configure_default() {
 	# sane defaults
 	pgrep -x sxhkd > /dev/null || sxhkd ~/.config/sxhkd/default.sxhkdrc &
 	bspc monitor -d I II III IV V VI VII VIII IX X
 	pgrep -x polybar > /dev/null || polybar -c ~/.config/polybar/kiwi.ini laptop &
+}
+
+if [ "$CHROME_REMOTE_DESKTOP_SESSION" = 1 ]; then
+	configure_crd
+else
+	if [[ $(uname -n) = 'lyoko' ]]; then
+		configure_lyoko
+	elif [[ $(uname -n) = 'kiwi' ]]; then
+		configure_kiwi
+	else
+		configure_default
+	fi
 fi
 
-pgrep -x dunst > /dev/null || dunst &
+xsetroot -cursor_name left_ptr
 nitrogen --restore
+pgrep -x dunst > /dev/null || dunst &
 polybar-msg cmd restart
 
 bspc config border_width 3

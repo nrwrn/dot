@@ -4,8 +4,9 @@ alt + c
 alt + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east} --follow
 
-alt + f
-	bspc node -t '~fullscreen'
+alt + {f, s}
+	bspc node -t {'~fullscreen', '~floating'}
+
 
 alt + m
 	bspc desktop -l next

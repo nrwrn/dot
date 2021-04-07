@@ -60,3 +60,5 @@ bspc config borderless_singleton   true
 bspc config gapless_monocle      true
 bspc config single_monocle       true
 
+wmname LG3D
+

@@ -1,0 +1,7 @@
+[user]
+	email = nrwrn@protonmail.com
+	name = nrwrn
+[pull]
+	rebase = true
+
+# vim: set filetype=gitconfig :

@@ -1,4 +1,5 @@
 deps:
+  - net
   - nvim
   - zsh
   - tmux

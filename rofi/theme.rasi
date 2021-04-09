@@ -56,11 +56,20 @@ listview {
 }
 
 element {
-  border: 0 0 1px 0;
+  border: 0 0 1px 1px;
   padding: 16px;
 }
 
 element selected {
   background-color: #2e343f;
 }
+
+element-icon {
+  size: 35px;
+}
+
+element-text {
+  padding: 0 0 0 12px;
+}
+
 /* vim:ft=css

@@ -1,2 +1,5 @@
 deps:
+  - alacritty
+  - dunst
+  - rofi
   - zathura

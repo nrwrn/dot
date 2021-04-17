@@ -4,6 +4,9 @@ super + c
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east} --follow
 
+alt + {_,shift + } Tab
+	bspc node -f {next,prev}.leaf.window.local
+
 super + {f, s}
 	bspc node -t {'~fullscreen', '~floating'}
 

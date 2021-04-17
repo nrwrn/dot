@@ -19,6 +19,7 @@ configure_kiwi() {
 	pgrep -x sxhkd > /dev/null || sxhkd ~/.config/sxhkd/kiwi.sxhkdrc &
 	bspc monitor -d www code discord games book six seven music nine ten
 	pgrep -x light-locker > /dev/null || light-locker &
+	pgrep -x redshift > /dev/null || redshift -l 41:-74 &
 }
 
 configure_crd() {
@@ -59,6 +60,8 @@ bspc config borderless_monocle   true
 bspc config borderless_singleton   true
 bspc config gapless_monocle      true
 bspc config single_monocle       true
+
+bspc rule -a Zathura state=tiled
 
 wmname LG3D
 

@@ -1,0 +1,27 @@
+set font "SpaceMono Nerd Font Mono 12"
+set adjust-open "width"
+set statusbar-home-tilde true
+set default-bg "#1D1F28"
+set default-fg "#FDFDFD"
+set statusbar-bg "#282A36"
+set statusbar-fg "#FDFDFD"
+set inputbar-bg "#1D1F28"
+set inputbar-fg "#FDFDFD"
+set completion-group-bg "#BEBEC1"
+set completion-group-fg "#1D1F28"
+set completion-bg "#1D1F28"
+set completion-fg "#FDFDFD"
+set completion-highlight-bg "#556FFF"
+set completion-highlight-fg "#1D1F28"
+set index-bg "#1D1F28"
+set index-fg "#FDFDFD"
+set index-active-bg "#556FFF"
+set index-active-fg "#1D1F28"
+set highlight-color "#556FFF"
+set highlight-fg "#FDFDFD"
+set highlight-active-color "#3FDCEE"
+set recolor true
+set recolor-lightcolor "#1D1F28"
+set recolor-darkcolor "#FDFDFD"
+set scroll-step 60
+set scroll-page-aware true

@@ -1,0 +1,6 @@
+# man paru.conf
+
+[options]
+PgpFetch
+BottomUp
+SudoLoop

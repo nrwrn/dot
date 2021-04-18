@@ -28,6 +28,7 @@ Plug 'tpope/vim-markdown'
 Plug 'sirtaj/vim-openscad'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'baskerville/vim-sxhkdrc'
+Plug 'cespare/vim-toml'
 Plug 'HerringtonDarkholme/yats.vim'
 
 " File browsing

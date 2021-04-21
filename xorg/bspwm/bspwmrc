@@ -12,6 +12,8 @@ configure_lyoko() {
 	bspc monitor DP-2 -d left steam code
 	bspc monitor DP-0 -d right discord docs
 	bspc monitor HDMI-0 -d tv
+
+	pgrep -x redshift > /dev/null || redshift -l 41:-74 &
 }
 
 configure_kiwi() {

@@ -6,10 +6,10 @@ configuration {
 
 * {
   /* colors */
-  background: #1D1F28;
-  foreground: #FDFDFD;
-  accent: #C574DD;
-  altBackground: #282A36;
+  background: #121212;
+  foreground: #F3E2EC;
+  accent: #CA9EE9;
+  altBackground: #444444;
 
   background-color: @background;
   border-color: @altBackground;

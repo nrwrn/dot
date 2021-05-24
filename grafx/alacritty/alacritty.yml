@@ -18,51 +18,38 @@ scrolling:
   history: 10000
 
 font:
-  size: 9
+  size: 11 
   normal:
-    family: SpaceMono Nerd Font Mono
+    family: Victor Mono Nerd Font Mono
+    style: Medium
 
 colors:
+  # Default colors
   primary:
-    background: '#1D1F28'
-    foreground: '#FDFDFD'
+    background: '0x121212'
+    foreground: '0xf3e2ec'
 
-  # Cursor colors
-  #
-  # Colors which should be used to draw the terminal cursor. If these are unset,
-  # the cursor color will be the inverse of the cell color.
-  cursor:
-    text: '#1D1F28'
-    cursor: '#C574DD'
-
-  # Selection colors
-  #
-  # Colors which should be used to draw the selection area. If selection
-  # background is unset, selection color will be the inverse of the cell colors.
-  # If only text is unset the cell text color will remain the same.
-  #selection:
-  #  text: '#eaeaea'
-  #  background: '#404040'
-
+  # Normal colors
   normal:
-    black:	'#414458'
-    red:	'#FF4971'
-    green:	'#18E3C8'
-    yellow:	'#FF8037'
-    blue:	'#556FFF'
-    magenta:	'#B043D1'
-    cyan:	'#3FDCEE'
-    white:	'#BEBEC1'
+    black:   '0x444444'
+    red:     '0xcf5185'
+    green:   '0x5faac7'
+    yellow:  '0xd48c75'
+    blue:    '0xb781dd'
+    magenta: '0xd580c9'
+    cyan:    '0x9585da'
+    white:   '0xc1a4c5'
 
+  # Bright colors
   bright:
-    black:	'#282A36'
-    red:	'#F37F97'
-    green:	'#5ADECD'
-    yellow:	'#F2A272'
-    blue:	'#8897F4'
-    magenta:	'#C574DD'
-    cyan:	'#79E6F3'
-    white:	'#FDFDFD'
+    black:   '0x696969'
+    red:     '0xd07ba3'
+    green:   '0x7cbbd3'
+    yellow:  '0xe7a995'
+    blue:    '0xca9ee9'
+    magenta: '0xe59bdb'
+    cyan:    '0xb4a9e7'
+    white:   '0xd6b9da'
 
 # Send ESC (\x1b) before characters when alt is pressed.
 alt_send_esc: false

@@ -8,6 +8,7 @@ configure_lyoko() {
 	fi
 
 	pgrep -x sxhkd > /dev/null || sxhkd ~/.config/sxhkd/lyoko.sxhkdrc &
+	pgrep -x picom > /dev/null || picom &
 
 	bspc monitor DP-2 -d left steam code
 	bspc monitor DP-0 -d right discord docs
@@ -67,6 +68,24 @@ bspc config gapless_monocle      true
 bspc config single_monocle       true
 
 bspc rule -a Zathura state=tiled
+
+# https://www.reddit.com/r/bspwm/comments/hqt1r3/is_there_a_way_to_disable_picom_rounded_borders/
+bspc subscribe desktop_layout | while read -r Event
+do
+  Desktop=$(echo "$Event" | awk '{print $3}')
+  State=$(echo "$Event" | awk '{print $4}')
+  if [ "$State" = "monocle" ]; then 
+    bspc query -N -d $Desktop | while read -r Node
+    do
+      xprop -id $Node -f _PICOM_ROUNDED 32c -set _PICOM_ROUNDED 1
+    done
+  elif [ $(bspc config window_gap) -gt 0 ]; then
+    bspc query -N -d $Desktop | while read -r Node
+    do
+      xprop -id $Node -remove _PICOM_ROUNDED
+    done
+  fi
+done &
 
 wmname LG3D
 

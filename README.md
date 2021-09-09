@@ -8,3 +8,4 @@ Dotfiles, currently in migration to `stow` format.
 * `extras`: not actually a stow package -- additional files needing more complex methods
 * `fun`: collection of fun little bin scripts
 * `grafx`: various gui configs not specific to a window manager or environment
+* `nrwrn`: configs specific to nrwrn identity

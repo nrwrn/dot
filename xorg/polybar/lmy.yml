@@ -1,7 +1,0 @@
-links:
-  kiwi.ini: ~/.config/polybar/kiwi.ini
-  lyoko.ini: ~/.config/polybar/lyoko.ini
-  bars.ini: ~/.config/polybar/bars.ini
-  modules.ini: ~/.config/polybar/modules.ini
-  user_modules.ini: ~/.config/polybar/user_modules.ini
-  updates-aurhelper.sh: ~/.config/polybar/scripts/updates-aurhelper.sh

@@ -1,0 +1,3 @@
+cli/.config/ranger/plugins/__init__.py
+cli/.config/ranger/plugins/__pycache__/
+cli/.config/ranger/plugins/ranger_devicons/__pycache__

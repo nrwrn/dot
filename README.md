@@ -1,2 +1,2 @@
 # dot
-My dotfiles
+Dotfiles, currently in migration to `stow` format.

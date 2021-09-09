@@ -1,4 +1,0 @@
-links:
-  rc.conf: ~/.config/ranger/rc.conf
-  devicons/__init__.py: ~/.config/ranger/plugins/ranger_devicons/__init__.py
-  devicons/devicons.py: ~/.config/ranger/plugins/ranger_devicons/devicons.py

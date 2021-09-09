@@ -59,8 +59,8 @@ XF86MonBrightnessDown
 XF86MonBrightnessUp
 	~/bin/dunst-brightness up
 
-Print
+Pause
 	mkdir -p ~/Pictures/scrot && \
-	scrot ~/Pictures/scrot/$(uname -n).png && \
-	notify-send "took scrot"
+	scrot -u ~/Pictures/scrot/$(uname -n).png && \
+	notify-send -t 3000 "took scrot"
 

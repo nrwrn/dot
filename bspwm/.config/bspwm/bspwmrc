@@ -26,6 +26,24 @@ configure_kiwi() {
 	pgrep -x redshift > /dev/null || redshift -l 41:-74 &
 }
 
+configure_van() {
+	if ! pgrep -x polybar > /dev/null; then
+		polybar -c ~/.config/polybar/van.ini left &
+		polybar -c ~/.config/polybar/van.ini center &
+		polybar -c ~/.config/polybar/van.ini right &
+	fi
+
+	pgrep -x sxhkd > /dev/null || sxhkd ~/.config/sxhkd/van.sxhkdrc &
+	pgrep -x picom > /dev/null || picom &
+
+	bspc monitor DP-2 -d term cider lazy
+	bspc monitor DP-6 -d www music
+	bspc monitor DP-0 -d chat crd test
+
+	pgrep -x xss-lock > /dev/null || xautolock -time 10 -notify 5 -locker 'xsecurelock'
+	~/bin/van-init.sh
+}
+
 configure_crd() {
 	pgrep -x polybar > /dev/null || polybar -c ~/.config/polybar/kiwi.ini laptop &
 	pgrep -x sxhkd > /dev/null || sxhkd -c ~/.config/sxhkd/crd.sxhkdrc &
@@ -46,6 +64,8 @@ else
 		configure_lyoko
 	elif [[ $(uname -n) = 'kiwi' ]]; then
 		configure_kiwi
+	elif [[ -f ~/.van ]]; then
+		configure_van
 	else
 		configure_default
 	fi
@@ -89,4 +109,3 @@ do
 done &
 
 wmname LG3D
-

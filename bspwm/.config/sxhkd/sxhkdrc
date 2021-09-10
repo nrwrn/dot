@@ -44,6 +44,18 @@ super + ctrl + {h,j,k,l}
 	} \
 	bspc node -z $d1 $dx $dy || bspc node -z $d2 $dx $dy
 
+XF86AudioPlay
+	playerctl play-pause
+
+XF86AudioStop
+	playerctl stop
+
+XF86AudioPrev
+	playerctl prev
+
+XF86AudioNext
+	playerctl next
+
 XF86AudioLowerVolume
 	~/bin/dunst-volume down
 
@@ -58,9 +70,3 @@ XF86MonBrightnessDown
 
 XF86MonBrightnessUp
 	~/bin/dunst-brightness up
-
-Pause
-	mkdir -p ~/Pictures/scrot && \
-	scrot -u ~/Pictures/scrot/$(uname -n).png && \
-	notify-send -t 3000 "took scrot"
-

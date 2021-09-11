@@ -1,8 +1,0 @@
-alt + {_, shift + }{u,i,o,p,m,comma,period,y}
-	bspc {desktop -f,node -d} '{term,cider,www,music,chat,crd,test}'
-
-super + {_, shift + }{1,2,3,4,5,6,7,8}
-	bspc {desktop -f,node -d} '{term,cider,www,music,chat,crd,test}'
-
-Pause
-    playerctl pause; xautolock -locknow

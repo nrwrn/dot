@@ -29,16 +29,16 @@ configure_kiwi() {
 configure_van() {
 	if ! pgrep -x polybar > /dev/null; then
 		polybar -c ~/.config/polybar/van.ini left &
-		polybar -c ~/.config/polybar/van.ini center &
+		polybar -c ~/.config/polybar/van.ini middle &
 		polybar -c ~/.config/polybar/van.ini right &
 	fi
 
 	pgrep -x sxhkd > /dev/null || sxhkd ~/.config/sxhkd/van.sxhkdrc &
 	pgrep -x picom > /dev/null || picom &
 
-	bspc monitor DP-2 -d term cider lazy
+	bspc monitor DP-0 -d term cider lazy
 	bspc monitor DP-6 -d www music
-	bspc monitor DP-0 -d chat crd test
+	bspc monitor DP-4 -d chat crd test
 
 	pgrep -x xss-lock > /dev/null || xautolock -time 10 -notify 5 -locker 'xsecurelock'
 	~/bin/van-init.sh

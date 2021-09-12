@@ -1,5 +1,7 @@
 #!/bin/sh
 
+export SHORTHOST=$(uname -n | cut -d '.' -f 1)
+
 configure_lyoko() {
 	if ! pgrep -x polybar > /dev/null; then
 		polybar -c ~/.config/polybar/lyoko.ini left &

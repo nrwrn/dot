@@ -23,7 +23,7 @@ super + s
 	rofi -show ssh
 
 super + Return
-	alacritty
+	kitty
 
 super + shift + {e,r}
 	bspc {quit,wm -r}

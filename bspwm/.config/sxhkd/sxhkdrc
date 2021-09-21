@@ -45,7 +45,7 @@ super + ctrl + {h,j,k,l}
 	bspc node -z $d1 $dx $dy || bspc node -z $d2 $dx $dy
 
 XF86AudioPlay
-	playerctl play-pause
+	mpc toggle
 
 XF86AudioStop
 	playerctl stop

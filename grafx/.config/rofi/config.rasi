@@ -5,4 +5,5 @@ configuration {
 	cycle: true;
 	theme: "theme";
 	terminal: "alacritty";
+	m: "-1";
 }
